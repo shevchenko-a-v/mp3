@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mp3Reader_Console", "Mp3Reader_Console\Mp3Reader_Console.vcxproj", "{1FB25A88-150A-4DA0-9B44-32AC7DC18B46}"
+	ProjectSection(ProjectDependencies) = postProject
+		{829F10E3-ADC0-4906-8BD5-295A6EC910C6} = {829F10E3-ADC0-4906-8BD5-295A6EC910C6}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mp3Decoder", "Mp3Decoder\Mp3Decoder.vcxproj", "{829F10E3-ADC0-4906-8BD5-295A6EC910C6}"
 EndProject

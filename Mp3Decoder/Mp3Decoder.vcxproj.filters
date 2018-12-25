@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="LowLevel">
+      <UniqueIdentifier>{73dfbcd2-b664-4dc3-ac5e-13ca2d714f96}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -21,10 +24,25 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LowLevel\Mp3Stream.h">
+      <Filter>LowLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="LowLevel\Mp3Header.h">
+      <Filter>LowLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LowLevel\Mp3Stream.cpp">
+      <Filter>LowLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="LowLevel\Mp3Header.cpp">
+      <Filter>LowLevel</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
