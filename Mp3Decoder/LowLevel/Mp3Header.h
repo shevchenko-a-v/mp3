@@ -50,8 +50,8 @@ namespace LowLevel
         static const std::map<LayerIndex, int> _coefficients;
         static const std::map <LayerIndex, int> _slotSizes;
 
-        static int GetBitrateFromIndex(AudioVersion audioVersion, LayerIndex layer, int index) noexcept;
-        static int GetSamplingRateFromIndex(AudioVersion audioVersion, int index) noexcept;
+        static int GetBitrateFromIndex(AudioVersion audioVersion, LayerIndex layer, int index);
+        static int GetSamplingRateFromIndex(AudioVersion audioVersion, int index);
         static int GetCoefficientForLayer(LayerIndex layer) noexcept;
         static int GetSlotSizeForLayer(LayerIndex layer) noexcept;
 

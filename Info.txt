@@ -1,0 +1,4 @@
+http://mp3guessenc.sourceforge.net/MPEG%20Layer3%20Bitstream%20Syntax%20and%20Decoding.pdf
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.118.3056&rep=rep1&type=pdf
+https://www.codeproject.com/Articles/8295/MPEG-Audio-Frame-Header#SamplingRate
+http://blog.bjrn.se/2008/10/lets-build-mp3-decoder.html?m=1

@@ -172,9 +172,9 @@ namespace LowLevel
     {
         auto layer = GetLayerIndex();
         auto samplingRate = GetSamplingRate();
-        return samplingRate == 0 ? 0 : ((GetCoefficientForLayer(layer) * GetBitrate() / samplingRate) + IsPaddingOn() ? 1 : 0) * GetSlotSizeForLayer(layer);
+        return samplingRate == 0 ? 0 : ((GetCoefficientForLayer(layer) * GetBitrate()*1000/*kbits to bits*/ / samplingRate) + (IsPaddingOn() ? 1 : 0)) * GetSlotSizeForLayer(layer);
     }
-    int Mp3Header::GetBitrateFromIndex(AudioVersion audioVersion, LayerIndex layer, int index) noexcept
+    int Mp3Header::GetBitrateFromIndex(AudioVersion audioVersion, LayerIndex layer, int index)
     {
         auto itrAudioVersion = _bitrateTable.find(audioVersion);
         if (itrAudioVersion != _bitrateTable.cend())
@@ -187,9 +187,9 @@ namespace LowLevel
                     return itrIndex->second;
             }
         }
-        return 0;
+        throw std::invalid_argument("index not found in table");
     }
-    int Mp3Header::GetSamplingRateFromIndex(AudioVersion audioVersion, int index) noexcept
+    int Mp3Header::GetSamplingRateFromIndex(AudioVersion audioVersion, int index)
     {
         auto itrAudioVersion = _samplingRateTable.find(audioVersion);
         if (itrAudioVersion != _samplingRateTable.cend())
@@ -198,7 +198,7 @@ namespace LowLevel
             if (itrIndex != itrAudioVersion->second.cend())
                 return itrIndex->second;
         }
-        return 0;
+        throw std::invalid_argument("index not found in table");
     }
     int Mp3Header::GetCoefficientForLayer(LayerIndex layer) noexcept
     {

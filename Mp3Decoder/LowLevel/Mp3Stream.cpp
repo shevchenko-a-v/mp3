@@ -21,7 +21,9 @@ namespace LowLevel
             auto header = ReadNextHeader(input, success);
             headers.push_back(header);
             auto frameSize = header.GetFrameSize();
-            std::streamoff f = frameSize;
+            //frameSize += header.IsProtected() ? 2 : 0; // CRC bytes
+            //frameSize += header.GetChannelMode() == ChannelMode::SingleChannel ? 17 : 32; // Side information length
+            std::streamoff f = frameSize - 4/*header len*/;
             input.seekg(input.tellg() + f);
         }
         input.close();
